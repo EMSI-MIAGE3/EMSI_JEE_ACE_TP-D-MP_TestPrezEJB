@@ -2,6 +2,7 @@ package ma.emsi.miage3.ecommerce.models;
 
 import java.io.Serializable;
 
+
 public class OrderItem implements Serializable {
 
 
@@ -9,15 +10,26 @@ public class OrderItem implements Serializable {
   private Order order;
   private Article article;
   private Integer quantity;
+  private Double price;
 
 
   public OrderItem() {
     super();
   }
 
-  public OrderItem(Article article, Integer quantity) {
+  public OrderItem(Order order, Article article, Integer quantity, Double price) {
+    super();
+    this.order = order;
     this.article = article;
     this.quantity = quantity;
+    this.price = price;
+  }
+
+  public OrderItem(Article article, Integer quantity, Double price) {
+    super();
+    this.article = article;
+    this.quantity = quantity;
+    this.price = price;
   }
 
   public Integer getId() {
@@ -52,16 +64,22 @@ public class OrderItem implements Serializable {
     this.order = order;
   }
 
+  public Double getPrice() {
+    return price;
+  }
 
+  public void setPrice(Double price) {
+    this.price = price;
+  }
 
   @Override
   public String toString() {
     return "OrderItem{" +
             "id=" + id +
             ", order_id=" + order.getId() +
-            ", article=" + article +
+            ", article_id=" + article.getId() +
             ", quantity=" + quantity +
+            ", price=" + price +
             '}';
   }
-
 }

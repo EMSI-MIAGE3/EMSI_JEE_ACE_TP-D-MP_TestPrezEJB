@@ -22,6 +22,7 @@ public class Article implements Serializable {
   }
 
   public Article(String reference, String name, String description, Integer stockQuantity, double price) {
+    super();
     this.reference = reference;
     this.name = name;
     this.description = description;
@@ -29,7 +30,9 @@ public class Article implements Serializable {
     this.price = price;
   }
 
+
   public Article(String reference, String name, String description, Integer stockQuantity, double price, String pictureURI) {
+    super();
     this.reference = reference;
     this.name = name;
     this.description = description;

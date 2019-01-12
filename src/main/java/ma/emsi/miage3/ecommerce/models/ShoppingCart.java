@@ -3,11 +3,14 @@ package ma.emsi.miage3.ecommerce.models;
 import java.io.Serializable;
 import java.util.List;
 
+
 public class ShoppingCart implements Serializable {
+
 
   private Integer id;
   private User clientOwner;
   private List<ShoppingCartItem> shoppingCartItems;
+  private Double totalAmount;
 
   public ShoppingCart() {
     super();
@@ -42,12 +45,19 @@ public class ShoppingCart implements Serializable {
     this.shoppingCartItems = shoppingCartItems;
   }
 
+  public Double getTotalAmount() {
+    this.totalAmount = 0.0;
+    this.getShoppingCartItems().forEach(item -> totalAmount += item.getArticle().getPrice());
+    return this.totalAmount;
+  }
+
   @Override
   public String toString() {
     return "ShoppingCart{" +
             "id=" + id +
-            ", id=client_id" + clientOwner.getId() +
+            ", client_id" + clientOwner.getId() +
             ", shoppingCartItems=" + shoppingCartItems +
+            ", totalAmount=" + totalAmount +
             '}';
   }
 }

@@ -47,13 +47,14 @@ public class Test1 {
 //      User user3 = userBean.addUser(new User("COLISÈUM", "Amal", "amalc", "Amal@COLISEUM.ma", "Casablanca", "0689232356", "amal123", UserRole.client));
       List<User> users = userBean.getAllUsers();
       System.out.println(users);
-      ShoppingCartItem shoppingCartItem = new ShoppingCartItem(article, 2);
+      //ShoppingCartItem shoppingCartItem = new ShoppingCartItem(article, 2);
 
       User user3 = users.get(3);
-      shoppingCartItem.setShoppingCart(user3.getShoppingCart());
-      shopBean.addItemToShoppingCart(shoppingCartItem);
-      user3.getShoppingCart().getShoppingCartItems().add(shoppingCartItem);
-      userBean.updateUser(user3);
+//      shoppingCartItem.setShoppingCart(user3.getShoppingCart());
+//      shopBean.addItemToShoppingCart(shoppingCartItem);
+//        user3.getShoppingCart().getShoppingCartItems().add(shoppingCartItem);
+//      userBean.updateUser(user3);
+      System.out.println(articleBean.deleteArticle(1));
     } catch (Exception e) {
       e.printStackTrace();
     } finally {

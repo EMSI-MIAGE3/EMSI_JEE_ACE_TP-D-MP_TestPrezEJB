@@ -23,7 +23,12 @@ public class ShoppingCartItem implements Serializable {
     this.quantity = quantity;
   }
 
-
+  public ShoppingCartItem(ShoppingCart shoppingCart, Article article, Integer quantity) {
+    super();
+    this.shoppingCart = shoppingCart;
+    this.article = article;
+    this.quantity = quantity;
+  }
 
   public Integer getId() {
     return id;
@@ -59,7 +64,7 @@ public class ShoppingCartItem implements Serializable {
 
   @Override
   public String toString() {
-    return "OrderItem{" +
+    return "ShoppingCartItem{" +
             "id=" + id +
             ", shopping_cart_id=" + shoppingCart.getId() +
             ", article=" + article +
